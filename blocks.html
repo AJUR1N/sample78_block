@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>第78回修猷大運動会公式HP ブロックページ</title>
+    <meta name="description" content="第78回修猷大運動会の魅力や情報をお伝えします。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href> -->
+
+    <!-- css --> <!-- wordpress以降不必要 -->
+    <link rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="style_blocks.css">
+    <link rel="stylesheet" href="style_resp_blocks.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+    <!-- SEO --> <!-- wordpress以降不必要 -->
+    <link rel="canonical"
+      href="https://shuyu.fku.ed.jp/ichinen_r07/%E5%A4%A7%E9%81%8B%E5%8B%95%E4%BC%9A/"><!-- このページのURLを指定 -->
+    <link rel="icon" href="img/六光星.png" sizes="32x32" /><!-- 修猷アイコンを指定 -->
+    <link rel="icon" href="img/六光星.png" sizes="192x192" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap"
+      rel="stylesheet">
+
+    <!-- js,jQuary -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js">
+    </script>
+  </head>
+
+  <body id="body">
+    <div id="content">
+
+      <header class="header">
+        <div class="header__inner">
+          <a class="header__logo" href="https://shuyu.fku.ed.jp/">
+            <img src="img/六光星.png" alt="HOME">
+            <div>福岡県立<br>修猷館高等学校</div>
+          </a>
+          <nav class="site__menu nav__content" id="js-nav">
+            <ul class="nav__items nav__list">
+              <li class="nav__items__item"><a
+                  href="#top-anchor">Top</a></li>
+              <li class="nav__items__item"><a
+                  href="#about-anchor">About</a></li>
+              <li class="nav__items__item"><a
+                  href="#location-anchor">Location</a></li>
+              <li class="nav__items__item"><a
+                  href="#program-anchor">Program</a></li>
+              <li class="nav__items__item"><a
+                  href="#block-anchor">Block</a></li>
+            </ul>
+            <div class="site__menu__margin" id="js-margin"></div>
+          </nav>
+          <div class="hamburger__menu__button for__resp">
+            <button type="button" id="js-buttonHamburger"
+              class="button__design hamburger__style active"
+              aria-controls="global-nav"
+              aria-expanded="false">
+              <span class="hamburger__style__line">
+                <span class="u-visuallyHidden">
+                  メニューを開閉する
+                </span>
+              </span>
+            </button>
+            <script>
+                function handleTouchMove(event){
+                  event.preventDefault();
+                }
+                const ham = document.querySelector('#js-buttonHamburger'); //js-buttonHamburgerの要素を取得し、変数hamに格納
+                const nav = document.querySelector('#js-nav'); //js-navの要素を取得し、変数navに格納
+                const mgn = document.querySelector('#js-margin'); //js-marginの要素を取得し、変数mgnに格納
+                const lis = document.getElementsByClassName("nav__items__item");
+                let tf = false;
+                ham.setAttribute("aria-expanded", false);
+
+                ham.addEventListener('click', function () { //ハンバーガーメニューをクリックしたら
+                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  if(tf.toString() != ham.getAttribute("aria-expanded")){
+                    tf = ham.getAttribute("aria-expanded");
+                  }
+                  if(tf){
+                    tf = false;
+                    document.removeEventListener('touchmove', handleTouchMove, {passive: false});
+                    document.body.style.overflow = "auto";
+                  }else{
+                    tf = true;
+                    document.addEventListener('touchmove', handleTouchMove, {passive: false});
+                    document.body.style.overflow = "hidden";
+                  }
+                  ham.setAttribute("aria-expanded", tf);
+                  document.documentElement.classList.toggle("is-drawerActive");
+
+                });
+
+                function closeHamburger () {
+                  if(ham.classList.contains('active') || nav.classList.contains('active') || mgn.classList.contains('active')){
+                    ham.classList.remove('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                    nav.classList.remove('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                    mgn.classList.remove('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  }
+                  tf = false;
+                  ham.setAttribute("aria-expanded", tf);
+                  document.removeEventListener('touchmove', handleTouchMove, {passive: false});
+                  document.body.style.overflow = "auto";
+                  document.documentElement.classList.toggle("is-drawerActive");
+                }
+
+                mgn.addEventListener('click', function () {
+                  closeHamburger();
+                });
+
+                lis[0].addEventListener('click', function () {
+                  closeHamburger();
+                });
+
+                lis[1].addEventListener('click', function () {
+                  closeHamburger();
+                });
+
+                lis[2].addEventListener('click', function () {
+                  closeHamburger();
+                });
+                
+              </script>
+          </div>
+        </div>
+      </header>
+      <div id="program-anchor"></div>
+      <div class="header__filler"></div>
+
+      <!-- program -->
+      <main id="main" style="margin: 0;">
+        <div class="program" id="gradient">
+          <h1 class="titles">Program</h1>
+          <ul class="program__container program__1">
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/7_陸上α.png" alt>
+                <h2 class="program__name">陸上α</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>8:25 ～ 8:40</div>
+                </div>
+                <img class="program__img" src="img/program/陸上α_resize.jpg" alt>
+                <p
+                  class="program__text">大運動会、開幕！​最初の競技はリレー。​加速する足音とバトンが、勝負の火蓋を切る！​</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/8_陸上β.png" alt>
+                <h2 class="program__name">陸上β</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>14:32 ～ 14:55</div>
+                </div>
+                <img class="program__img" src="img/program/陸上β_resize.jpg" alt>
+                <p
+                  class="program__text">跳んで、まわって、美白になって！？大運動会の​大人気障害物競走！​予測不可能なこの競技を一瞬たりとも見逃すな！​</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/9_陸上γ.png" alt>
+                <h2 class="program__name">陸上γ</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>15:25 ～ 15:37</div>
+                </div>
+                <img class="program__img" src="img/program/陸上γ_resize.jpg" alt>
+                <p
+                  class="program__text">大運動会最後の競技は​スウェーデンリレーとブロック対抗リレー。すべての想いがバトンを経てブロック長へとつながっていく。​</p>
+              </div>
+            </li>
+          </ul>
+          <ul class="program__container program__2">
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/1.4_綱引き.png" alt>
+                <h2 class="program__name">綱引き</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>&lt;予選&gt; 10:28 ～ 10:53<br>&lt;決勝&gt; 13:44 ～
+                    13:59</div>
+                </div>
+                <img class="program__img" src="img/program/綱引き_resize.jpg" alt>
+                <p class="program__text">
+                  ​各ブロック男女80人ずつと​最後尾のアンカーマンで綱を​引き合う。「音頭取り」や​「旗持ち」も選手たちを鼓舞​する大事な仲間！多人数の​パワーと熱い掛け声が​見どころ！​</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/2_騎馬戦.png" alt>
+                <h2 class="program__name">騎馬戦</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>&lt;予選&gt; 10:57 ～ 11:12<br>&lt;決勝&gt; 13:22 ～
+                    13:40</div>
+                </div>
+                <img class="program__img" src="img/program/騎馬戦_resize.jpg" alt>
+                <p
+                  class="program__text">4人で1つの騎馬を組み、1対1でぶつかり合う。花形種目でもあるこの競技の激しさと緊張感は場を圧巻で包み込む。​互いの意地をかけた戦の行方は果たして……。​ブロックごとに異なる戦術に​注目！​</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/5_棒引き.png" alt>
+                <h2 class="program__name">棒引き</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>&lt;予選&gt; 8:43 ～ 8:55<br>&lt;決勝&gt; 14:59 ～
+                    15:09</div>
+                </div>
+                <img class="program__img" src="img/program/棒引き_resize.jpg" alt>
+                <p
+                  class="program__text">90秒の間に12本の棒を​自陣に引き合う。​真ん中にあるスペシャル棒は​得点が2倍に！一本一本に​白熱したドラマが！​どの棒も見逃せない！​</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/3_棒倒し.png" alt>
+                <h2 class="program__name">棒倒し</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>&lt;予選&gt; 9:49 ～ 9:59<br>&lt;決勝&gt; 15:13 ～
+                    15:23</div>
+                </div>
+                <img class="program__img" src="img/program/棒倒し_resize.jpg" alt>
+                <p
+                  class="program__text">これはただ棒を倒すだけの​力勝負ではない。​タイミング、配置、動きの​読み合い――​すべてが勝敗を左右する。​必死で走り、叫び、ぶつかり​合う修猷男児の本気を​ご覧あれ。​</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/6_大帽走.png" alt>
+                <h2 class="program__name">大帽走</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>9:34 ～ 9:44</div>
+                </div>
+                <img class="program__img" src="img/program/大帽走_resize.jpg" alt>
+                <p
+                  class="program__text">1、2年女子が10人11脚で縄​を跳び、コースを駆け抜ける！​バトンの代わりに大きな帽子​をかぶって走るのが特徴。​息の合った走りに注目！​</p>
+              </div>
+            </li>
+          </ul>
+          <ul class="program__container program__3">
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/10_タンブリング.png"
+                  alt>
+                <h2 class="program__name">タンブリング</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>8:57 ～ 9:31<br>青→白→黄→赤</div>
+                </div>
+                <img class="program__img" src="img/program/coming_soon.png" alt>
+                <p class="program__text">男子全員出場 ｡各ブロックのテーマを自らで体現し、その勇姿を競い合う
+                  ｡この夏を懸け覚悟のもと造り上げた演技を、修猷男児の熱い想いを、その胸に刻み込め。</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/11_創作ダンス.png" alt>
+                <h2 class="program__name">創作ダンス</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>10:01 ～ 10:23<br>赤→青→黄→白</div>
+                </div>
+                <img class="program__img" src="img/program/coming_soon.png" alt>
+                <p
+                  class="program__text">女子全員出場。ブロックごとにテーマを定め、独自に創作したダンスでその表現力を競う。全員で表情豊かに踊る様子は、まさに私たちのエネルギーの結晶である。​</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/12_応援コンテスト.png"
+                  alt>
+                <h2 class="program__name">応援コンテスト</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>12:35 ～ 13:12<br>赤→黄→白→青</div>
+                </div>
+                <img class="program__img" src="img/program/coming_soon.png" alt>
+                <p
+                  class="program__text">修猷大運動会の中で、唯一全ブロック生が参加する競技。約３００人がパネルによって作り出す、想いの込められた文字や絵は迫力満点！各ブロック、それぞれの想いを表す特パネにもご注目。応コン大幹たち、そして全ブロック生がこの日に向けて創り上げてきた作品をご覧あれ。</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/14_バック.png" alt>
+                <h2 class="program__name">バック</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div>12:35 ～ 13:12</div>
+                </div>
+                <img class="program__img" src="img/program/coming_soon.png" alt>
+                <p
+                  class="program__text">生徒を見守るスタンドに掲げられるのはバックと呼ばれる巨大なキャンバス。第2バックが降りる瞬間は、生徒の2カ月間の全ての想いが一瞬に集約される圧巻のひととき、最後まで目を離すな。</p>
+              </div>
+            </li>
+            <li>
+              <div class="program__box">
+                <img class="program__pict" src="img/pictogram/13_エール.png" alt>
+                <h2 class="program__name">エール</h2>
+                <div class="program__time__border"></div>
+                <div class="program__time">
+                  <div style="font-size: 12px;">11:14 ～
+                    11:45<br>&lt;エールっこ&gt;黄→赤→青→白→全体<br>&lt;エーラー&gt;赤→青→白→黄→全体</div>
+                </div>
+                <img class="program__img" src="img/program/coming_soon.png" alt>
+                <p
+                  class="program__text">演舞の「エーラー」と、チアダンスの「エールっこ」が、２カ月かけて作り上げた完成度の高いエールで選手たちを応援。エーラーの迫真の演舞には心を動かされること間違いなし！​<br>エールっこの軽やかなダンスとはじける笑顔はその場の全員に元気と活力を与えてくれる！​</p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <script>
+      var colors = new Array(
+      [62,35,255],
+      [60,255,60],
+      [255,35,98],
+      [45,175,230],
+      [255,0,255],
+      [255,128,0]);
+
+      var step = 0;
+      //color table indices for:
+      // current color left
+      // next color left
+      // current color right
+      // next color right
+      var colorIndices = [0,1,2,3];
+
+      //transition speed
+      var gradientSpeed = 0.002;
+
+      function updateGradient()
+      {
+
+      if ( $===undefined ) return;
+
+      var c0_0 = colors[colorIndices[0]];
+      var c0_1 = colors[colorIndices[1]];
+      var c1_0 = colors[colorIndices[2]];
+      var c1_1 = colors[colorIndices[3]];
+
+      var istep = 1 - step;
+      var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+      var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+      var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+      var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+      var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+      var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+      var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+      var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+      $('#gradient').css({
+      background:
+      "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+      background:
+      "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+
+      step += gradientSpeed;
+      if ( step >= 1 )
+      {
+      step %= 1;
+      colorIndices[0] = colorIndices[1];
+      colorIndices[2] = colorIndices[3];
+
+      //pick two new target color indices
+      //do not pick the same as the current one
+      colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() *
+      (colors.length - 1))) % colors.length;
+      colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() *
+      (colors.length - 1))) % colors.length;
+
+      }
+      }
+
+      setInterval(updateGradient,10);
+      
+      </script>
+        <!-- /program -->
+
+        <!-- blocks -->
+        <div id="block-anchor"></div>
+        <div class="blocks">
+          <h1 class="titles" id="titles__block">Blocks</h1>
+
+          <!-- Red -->
+          <div class="block red" id="red-block-anchor">
+            <div class="block__inner">
+              <h2>RED</h2>
+              <div class="block__text">
+                <div class="block__slogan__section">
+                  <div class="block__slogan__title">
+                    <div class="rubi">かくしょう</div>
+                    爀昇
+                  </div>
+                  <div
+                    class="block__slogan__text">このスローガンには「全員が全力でこの夏を駆け抜けた確かな証拠を掴む」という意味が込められている。文字の通り、赤く熱い炎のように高く昇っていき総合優勝という絶景をみよう。赤ブロックの一員になったことが優勝の確証だ。​</div>
+                </div>
+                <div
+                  class="block__leader__text">酷暑の中、俺たちは様々な壁を乗り越えてきた。​すべては今日、赤の優勝のため。​本番は一瞬、悔いのないよう全員が全力を尽くせ。​スローガンとともに、総合優勝の確証はここにある。​<div
+                    class="block__leader__name">赤ブロック長&emsp;中&emsp;遼太郎</div></div>
+              </div>
+              <div class="block__class"></div>
+              <a href="img/back/赤第１バック_trim.jpg" data-fancybox="trim"
+                data-type="image"
+                data-caption="ブロックimg"><img src="img/back/赤第１バック_trim.jpg"
+                  alt="back_img" class="back__img"></a>
+              <div class="all__themes">
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <!-- <div class="block__rubi"></div> -->
+                      栄華の夢​
+                    </div>
+                    <div class="theme__genre">タンブリングテーマ</div>
+                  </div>
+                  <p>俺たちのタンブテーマは、​「栄華の夢」。​栄華の夢とは、豪華で華やかな時がまるで夢のように儚く、すぐに消えてしまう様子を表す言葉である。​このテーマのモデルとなったのは真田幸村である。​真田幸村が生涯忠誠を誓った豊臣家は、一度は天下をとり栄華を得たものの、ほどなくして凋落した。その豊臣家最後の戦いである大坂夏の陣を舞台に孤軍奮闘した真田幸村は、最後はその名声と共に消え去った。その様相は、豪華で華やかな時がまるで夢のように儚く、すぐに消えてしまう「栄華の夢」、俺たちのテーマそのものである。​</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">がっこん</div>
+                      楽魂
+                    </div>
+                    <div class="theme__genre">ダンステーマ</div>
+                  </div>
+                  <p>誰もが知る音楽家、ルートヴィヒ・ヴァン・ベートーヴェンは数々の名曲を生み出した楽聖である。音楽家として致命的な難聴を抱えながらも曲を作り続けた彼には、音楽への深い愛と情熱があった。私たちはダンスへの愛と情熱を彼の音楽にのせ、表現を心から楽しみ、魂を込めて踊る。​</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">りょうまこうしょう</div>
+                      凌摩紅霄
+                    </div>
+                    <div class="theme__genre">応援コンテストテーマ</div>
+                  </div>
+                  <p>紅色に染まった大空さえも凌ぐ、というこの言葉の通り、俺たちの本気は限界を超える。どんな壁も俺たちを阻むことはできない。あとは、赤夏を駆け抜けた仲間と共に史上最高の応コンを創るだけだ。夜明けの刻は来た。声は決意と覚悟を乗せて空に響き、赫く燃え上がる情熱は、宙をも越えていく。</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">きしんかいびゃく</div>
+                      鬼神開闢
+                    </div>
+                    <div class="theme__genre">バックテーマ</div>
+                  </div>
+                  <p>ー神は自分のかたちに人を創造された。すなわち、神のかたちに創造し…ー『創世記』第1章17節&emsp;;天地を創造し、地上に恵みをもたらす神のごとく、地を荒らし、畏怖をも集める鬼のごとく…。赤ブロックの創造する、荘厳かつ強大なバックの世界へ、さあ、ゆこう！​</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- blue -->
+          <div class="block blue" id="blue-block-anchor">
+            <div class="block__inner">
+              <h2>BLUE</h2>
+              <div class="block__text">
+                <div class="block__slogan__section">
+                  <div class="block__slogan__title">
+                    <div class="rubi">だかい</div>
+                    舵凱
+                  </div>
+                  <div
+                    class="block__slogan__text">青ブロ全員で道を切り開き、その先で勝利の凱（かちどき）をあげる。また、この字には「打開」という意味も含まれている。常に限界を超え続け、全てを超越した大運動会を作り上げる。</div>
+                </div>
+                <div
+                  class="block__leader__text">修猷大運動会を通して、多くのものが様々なことに挑戦してきた。その過程における失敗と挫折を仲間とともに打ち砕き、困難を舵凱する。かけがえのない日々をただ１日に賭けてこの夏の熱狂を青に染める。​<div
+                    class="block__leader__name">青ブロック長&emsp;阿部&emsp;侑也</div></div>
+              </div>
+              <div class="block__class"></div>
+              <a href="img/back/青第１バック_trim.jpg" data-fancybox="trim"
+                data-type="image"
+                data-caption="ブロックimg"><img src="img/back/青第１バック_trim.jpg"
+                  alt="back_img" class="back__img"></a>
+              <div class="all__themes">
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">どうもう</div>
+                      艟艨
+                    </div>
+                    <div class="theme__genre">タンブリングテーマ</div>
+                  </div>
+                  <p>艟艨とは海上での戦において先陣を切って敵の艦隊に突入していく船のことである。それはまるで計り知れない巨大な壁にも果敢に向かっていく『挑戦』する者の姿のように見える。我々はそれぞれがこの夏を通して得た『挑戦』という言葉の定義を１つの艟艨に乗せて、新たな修猷のタンブリングをつくろうと努力してきた。挑戦する者、青ブロ男児の勇姿を目に焼きつけて欲しい。​</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <!-- <div class="block__rubi"></div> -->
+                      We gotta be free!&emsp;～人生は自分自身のもの～​
+                    </div>
+                    <div class="theme__genre">ダンステーマ</div>
+                  </div>
+                  <p>世の中には親や周りの人たちからの評価を気にしてやりたいことを諦め、個性を隠して自分が分からなくなっている人が数え切れないほどいる。そんな人たちのために自分の好きなように生きることの素晴らしさを表現する。誰もが無限の可能性と想像力を持っていることを伝えて、見ている人と踊っている人に未来への希望と自分の気持ちに正直になる勇気を与えたい。​</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">そうてんだしょう</div>
+                      蒼天舵翔
+                    </div>
+                    <div class="theme__genre">応援コンテストテーマ</div>
+                  </div>
+                  <p>青ブロック生全員が熱い気持ちを持ち、大きな青空に翔び立つような爽快でかつ豪快なイメージを込めたスローガンだ。また「舵」はブロックスローガンである「舵凱」からとったものであり、大運動会における青ブロックの勝利の舵を取るという意味も込めている。​</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">かいしんへきれき</div>
+                      凱心碧靂​
+                    </div>
+                    <div class="theme__genre">バックテーマ</div>
+                  </div>
+                  <p>『凱心』は敵を見据えて「戒心」する狼が「会心」の一撃を与え、「凱」を掴む姿を表す。『碧靂』は青く輝く宝石を表わす「碧」と激しい雷鳴を意味する「霹靂」を合わせた。第２バックでは、青い霹靂と共に敵を撃ち倒した狼が登場する。この狼のように、日々の練習で闘志を高め、己を宝石のように磨いた青ブロック生は、青天の「霹靂」の如く誰にも予想できないほどの大きな感動をもたらし、他を圧倒し完全優勝を果たす。​</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- white -->
+          <div class="block white" id="white-block-anchor">
+            <div class="block__inner">
+              <h2>WHITE</h2>
+              <div class="block__text">
+                <div class="block__slogan__section">
+                  <div class="block__slogan__title">
+                    <div class="rubi">てきれき</div>
+                    的皪
+                  </div>
+                  <div
+                    class="block__slogan__text">「あざやかに白く輝く」という意味。修猷の大運動会ではいろんな輝き方がある。1人1人、光る色は違えど、ブロック全員の光が重なれば白い光を放つ。だから安心して、自信をもって、自分らしく輝け。2025の修猷大運動会を白に染め上げて最高の夏にしよう！！</div>
+                </div>
+                <div
+                  class="block__leader__text">何もしなくたって生きていけるこの世の中で、俺たちは自ら苦難に立ち向かった。そんな白ブロの皆んなは俺の誇りだ。いま改めて自分自身を奮い立たせて欲しい。譲れない野望があるか？感動がほしいか？二度と戻れないひと夏の一瞬一瞬を心に刻め。夢を掴み取れ。<div
+                    class="block__leader__name">白ブロック長&emsp;横溝&emsp;紺</div></div>
+              </div>
+              <div class="block__class"></div>
+              <a href="img/back/白第１バック_trim.jpg" data-fancybox="trim"
+                data-type="image"
+                data-caption="ブロックimg"><img src="img/back/白第１バック_trim.jpg"
+                  alt="back_img" class="back__img"></a>
+              <div class="all__themes">
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">けつじつりょうらん</div>
+                      結實繚乱
+                    </div>
+                    <div class="theme__genre">タンブリングテーマ</div>
+                  </div>
+                  <p>世の中には、偶然の成功が溢れている。果たしてそこに価値はあるのだろうか。私達は、自分自身の力で実を結ぶことにこそ価値があると思う。真に努力をした者は、真に価値のある結果を手に入れることが出来る。修猷生はそうであって欲しい。これからの人生、大きな困難が私たちの前に幾度となく立ちはだかるだろう。決して挫けるな。乗り越えた先には、価値のある結果と、強く美しい自分が待っている。このタンブリングが、その象徴となる。​白の男達が、今咲き誇る。​</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <!-- <div class="block__rubi"></div> -->
+                      脈々​&emsp;-大阪万博を通してつながる命のバトン-
+                    </div>
+                    <div class="theme__genre">ダンステーマ</div>
+                  </div>
+                  <p>1970年、アジア初開催だった「大阪万博」では、人と人が出会い、未来への夢が語られた。そして2025年。大阪の地で万博が開催され、どちらも「いのち」というキーワードで繋がっている。命は偶然ではなく、誰かの願いや行動によってつながれてきた。​そして今、私たちもまた希望を持って「命のバトン」をつなぐ。「命のバトン」が過去から未来へと脈々と受け継がれる様子、未来への希望をダンスで表現する。</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">ひっしょう</div>
+                      翔燿
+                    </div>
+                    <div class="theme__genre">応援コンテストテーマ</div>
+                  </div>
+                  <p>必勝や必笑など様々な前向きな意味が込められている。​また、今年は応コンでさらなる高みへ飛び立ち歴代最高の応コンを作りたいという思いから「翔」という漢字を使った。​さらに今年の白ブロックのテーマが的皪で「光り輝く」という意味があるため​「燿」という漢字を使い応コンでも全員が輝けるようなテーマにした。​この言葉には今の自分たちの決意と情熱が詰まっている。このテーマで必ず優勝を掴み取る。</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">せんどう</div>
+                      扇導
+                    </div>
+                    <div class="theme__genre">バックテーマ</div>
+                  </div>
+                  <p>WHITEのバックは、ただの素晴らしい絵では終わらせない。とてつもない熱意と勢いのあるこの白ブロックに、背中から追い風を起こし、さらに勢いを加速させて、私たちを勝利に導いてくれる。だから白ブロックは後ろを気にせず、勝利に向かって進むことが出来る。そんなバックが白にはついている。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Yellow -->
+          <div class="block yellow" id="yellow-block-anchor">
+            <div class="block__inner">
+              <h2>YELLOW</h2>
+              <div class="block__text">
+                <div class="block__slogan__section">
+                  <div class="block__slogan__title">
+                    <!-- <div class="rubi"></div> -->
+                    エキセントリック
+                  </div>
+                  <div
+                    class="block__slogan__text">前人未到の完全優勝を果たすために必要なこと。それは異なることだ。​人と同じことをしても人と同じ結果が出るだけである。誰かに憧れていても、その人は超えられない。我々は勝利のために修猷大運動会のエキセントリックとなり、完全優勝を成し遂げる。​恐れるな、異端児たれ。​</div>
+                </div>
+                <div
+                  class="block__leader__text">現代社会では時代の変化が学校教育における行事に向かい風をふかせている。もはや、運動会に全力を懸ける高校生は社会的に見ればエキセントリックなのかもしれない。ならば、我々の勝利を目指す姿が、そしてそれをつかみ取る姿がたくさんの人を感動させると信じて。勝ち取れ、イエロー。修猷の、社会のエキセントリックとして。<div
+                    class="block__leader__name">黄ブロック長&emsp;林&emsp;龍之介</div>​</div>
+              </div>
+              <div class="block__class"></div>
+              <a href="img/back/黄第１バック_trim.jpg" data-fancybox="trim"
+                data-type="image"
+                data-caption="ブロックimg"><img src="img/back/黄第１バック_trim.jpg"
+                  alt="back_img" class="back__img"></a>
+              <div class="all__themes">
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">こどう</div>
+                      琥導
+                    </div>
+                    <div class="theme__genre">タンブリングテーマ</div>
+                  </div>
+                  <p>数千万年以上も前の天然脂が化石化した宝石である琥珀のように歴史に刻まれた修猷のタンブリングは次の世代へと導かなくてはならないものだと我々は考える。​その想いを“琥導”というテーマにこめた。我々がタンブリングを通じて成長し、それぞれの道（個道）を、己が言じる道（己道）を歩んで行こうとする姿や、我々の生命の鼓動を感じてほしい。</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <!-- <div class="block__rubi"></div> -->
+                      The Greatest Show&emsp;〜The preciousness of being with
+                      friends〜
+                    </div>
+                    <div class="theme__genre">ダンステーマ</div>
+                  </div>
+                  <p>仲間との衝突、民衆からの批判、拠点の焼失-----
+                    。伝説の興行師と謳われるP.Tバーナムは、多くの障壁を乗り越え地上最大のshowを大成した。多くの困難に見舞われる中でも理想を追い求め続ける果敢な姿と仲間と共に居られる喜びを体現する。</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">せんりんか</div>
+                      千璘花
+                    </div>
+                    <div class="theme__genre">応援コンテストテーマ</div>
+                  </div>
+                  <p>「千輪」という花火のように、それぞれが花を咲かせるために、我々は限界を超えて叫ぶ -----
+                    夏の試練を乗り越えて。そして、修猷大運動会を迎えた今、333の魂は光を放ち始める。見よ、我々の魂の叫びを。新たな伝説を。一人ひとりが輝く、歴史に残る黄ブロック333人の応コンを目に焼き付けてくれ！</p>
+                </div>
+                <div class="themes">
+                  <div class="theme__section">
+                    <div class="theme">
+                      <div class="block__rubi">こしょうかいか</div>
+                      虎燿凱花
+                    </div>
+                    <div class="theme__genre">バックテーマ</div>
+                  </div>
+                  <p>虎燿凱花とは、虎が吠えること、転じて英雄・豪傑が世に出て活躍することを意味する「虎嘯」、ブロック生一人ひとりが成長し大きな花を咲かせる「開花」の2つを合わせたものだ。そこに、光り輝くという意味の「燿」。勝鬨、勝利を表す「凱」をあて、虎、星、月、花がそれぞれの光を放ち輝くことで、歴代一のバックとなり、勝鬨をあげる。その姿を表したテーマである。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- /blocks -->
+
+      </main>
+
+      <!-- footer -->
+      <footer class="footer">
+        <nav class="site__menu__footer">
+
+        </nav>
+        <div class="footer__schoolname">
+          <img src="img/六光星.png" alt="SHUYU" class="footer__logo">
+          <p>福岡県立 修猷館高等学校<br>第78回修猷大運動会公式HP</p>
+        </div>
+        <nav class="footer__site__menu">
+          <ul class="footer__nav__items__1">
+            <li class="footer__nav__items__item"><a
+                href="#top-anchor">Top</a></li>
+            <li class="footer__nav__items__item"><a
+                href="#about-anchor">About</a></li>
+            <li class="footer__nav__items__item"><a
+                href="#location-anchor">Location</a></li>
+            <!--             <li class="footer__nav__items__item"><a
+                href="#artworks-anchor">Artworks</a></li> -->
+          </ul>
+          <ul class="footer__nav__items__2">
+            <li class="footer__nav__items__item"><a
+                href="#program-anchor">Program</a></li>
+            <li class="footer__nav__items__item"><a
+                href="#block-anchor">Blocks</a></li>
+          </ul>
+        </nav>
+        <div class="footer__line"></div>
+        <p class="footer__departmentName">&copy;第78回修猷大運動会運営委員会広報部署</p>
+      </footer>
+      <!-- /footer -->
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('[data-fancybox]').fancybox({
+        loop : true, // 複数画像の際に最初と最後をループさせる
+        toolbar : false, // ツールバーの表示・非表示
+        smallBtn : true, // 小さいCloseボタンの表示
+        keyboard : true, // キーボード操作を有効にするか
+        arrows : true, // 矢印の表示
+        iframe : { // iframeの処理
+        preload : false //iframeのプリロード
+        }
+        });
+        });
+        </script>
+
+  </body>
+
+</html>
